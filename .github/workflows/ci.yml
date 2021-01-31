@@ -22,5 +22,5 @@ jobs:
         if: ${{ !startsWith(github.head_ref, 'pione30/') }}
         run: echo "Explicitly github.head_ref does NOT startsWith 'pione30/'"
       - name: Not operator on the head without the expression syntax
-        if: !startsWith(github.head_ref, 'pione30/')
-        run: echo "github.head_ref does NOT startsWith 'pione30/' (??)"
+        if: (!startsWith(github.head_ref, 'pione30/'))
+        run: echo "github.head_ref does NOT startsWith 'pione30/'"
