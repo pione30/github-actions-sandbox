@@ -17,3 +17,10 @@ jobs:
       - name: Expression syntax omitted
         if: github.actor == 'pione30'
         run: echo "github.actor is pione30 even though the expression syntax omitted"
+
+      - name: Not operator on the head in the explicit expression syntax
+        if: ${{ !startsWith(github.head_ref, 'pione30/') }}
+        run: echo "Explicitly github.head_ref does NOT startsWith 'pione30/'"
+      - name: Not operator on the head without the expression syntax
+        if: !startsWith(github.head_ref, 'pione30/')
+        run: echo "github.head_ref does NOT startsWith 'pione30/' (??)"
