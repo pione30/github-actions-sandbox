@@ -24,7 +24,3 @@ jobs:
       - name: Not operator on the head without the expression syntax
         if: (!startsWith(github.head_ref, 'pione30/'))
         run: echo "github.head_ref does NOT startsWith 'pione30/'"
-
-      - name: Correct tag handle
-        if: !!str always()
-        run: echo "This line will be exectued"
