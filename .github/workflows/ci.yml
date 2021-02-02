@@ -25,9 +25,6 @@ jobs:
         if: (!startsWith(github.head_ref, 'pione30/'))
         run: echo "github.head_ref does NOT startsWith 'pione30/'"
 
-      - name: Verbatim Tags (1)
-        if: !<tag:yaml.org,2002:str> startsWith(github.head_ref, 'pione30/')
-        run: echo "github.head_ref DOES startsWith 'pione30/'"
-      - name: Verbatim Tags (2)
-        if: !<tag:yaml.org,2002:str> startsWith(github.head_ref, 'foobar/')
-        run: echo "github.head_ref DOES startsWith 'pione30/'"
+      - name: Not always
+        if: !!str !always()
+        run: echo "This line will not be exectued"
