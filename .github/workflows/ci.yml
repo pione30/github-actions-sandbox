@@ -1,26 +1,11 @@
 name: CI
 
 on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
+  - push
 
 jobs:
-  if-omit-expression-syntax-test:
-    runs-on: ubuntu-20.04
+  composite_test:
+    runs-on: ubuntu-latest
     steps:
-      - name: Explicit expression syntax
-        if: ${{ github.actor == 'pione30' }}
-        run: echo "Explicitly github.actor is pione30"
-      - name: Expression syntax omitted
-        if: github.actor == 'pione30'
-        run: echo "github.actor is pione30 even though the expression syntax omitted"
-
-      - name: Not operator on the head in the explicit expression syntax
-        if: ${{ !startsWith(github.head_ref, 'pione30/') }}
-        run: echo "Explicitly github.head_ref does NOT startsWith 'pione30/'"
-      - name: Not operator on the head without the expression syntax
-        if: (!startsWith(github.head_ref, 'pione30/'))
-        run: echo "github.head_ref does NOT startsWith 'pione30/'"
+      - uses: actions/checkout@v2
+      - uses: pione30/github-pages-deploy-composite-action@v0.1.0
