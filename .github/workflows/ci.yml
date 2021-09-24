@@ -8,4 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: pione30/github-pages-deploy-composite-action@v0.1.0
+      - uses: pione30/github-pages-deploy-composite-action@deploy-steps
+        with:
+          folder: 'gh-pages'
