@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: sed -i -e 's/GitHub/Great GitHub/g' hello-gh-pages/index.html
       - uses: pione30/github-pages-deploy-composite-action@deploy-steps
         with:
-          branch: 'hogehogeppi'
+          branch: 'gh-pages'
           folder: 'hello-gh-pages'
