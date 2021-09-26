@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: pione30/github-pages-deploy-composite-action@deploy-steps
         with:
-          folder: 'gh-pages'
+          branch: 'hogehogeppi'
           folder: 'hello-gh-pages'
