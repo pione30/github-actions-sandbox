@@ -11,3 +11,4 @@ jobs:
       - uses: pione30/github-pages-deploy-composite-action@deploy-steps
         with:
           folder: 'gh-pages'
+          folder: 'hello-gh-pages'
